@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="StringStudyTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-03-04T07:32:10" hostname="baejinseob-ui-MacBook-Pro.local" time="0.058">
+  <properties/>
+  <testcase name="charAt_예외발생()" classname="StringStudyTest" time="0.058"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
