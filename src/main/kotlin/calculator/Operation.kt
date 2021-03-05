@@ -1,6 +1,5 @@
 package calculator
 
-import java.util.*
 import java.util.function.BinaryOperator
 import java.util.function.IntBinaryOperator
 
@@ -20,11 +19,14 @@ enum class Operation : BinaryOperator<Int>, IntBinaryOperator {
 
     override fun applyAsInt(firstValue: Int, secondValue: Int): Int = apply(firstValue, secondValue)
 
+}
 
-
-//    protected fun arithmeticOperationCheck(arithmeticOperation: String): Operation? {
-//        return Arrays.stream(values())
-//            .filter { o: Operation -> o.arithmeticOperation == arithmeticOperation }
-//            .findAny().orElseThrow { IllegalArgumentException() }
-//    }
+fun arithmeticOperationCheck(arithmeticOperation: String, values: Pair<Int,Int> ) {
+    when (arithmeticOperation) {
+        "+" -> Operation.PLUS.apply(values.first, values.second)
+        "-" -> Operation.MINUS.apply(values.first, values.second)
+        "*" -> Operation.MULTIPLY.apply(values.first, values.second)
+        "/" -> Operation.DIVISION.apply(values.first, values.second)
+        else -> throw IllegalArgumentException()
+    }
 }

@@ -1,7 +1,8 @@
 package calculator
 
+import org.assertj.core.api.Assertions
 import org.assertj.core.api.Assertions.assertThat
-import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.CsvSource
 
@@ -29,5 +30,14 @@ class OperationTest {
     @CsvSource("10:2:5","2:2:1", "10:5:2", delimiter = ':')
     fun 나누기(firstValue: Int, secondValue: Int, result: Int) {
         assertThat(Operation.DIVISION.apply(firstValue, secondValue)).isEqualTo(result)
+    }
+
+    @ParameterizedTest
+    @DisplayName("사칙연산 예외 기호 테스트 코드")
+    @CsvSource(value = ["@", "%", "$", "&"])
+    fun arithmeticOperationCheck(arithmetic: String) {
+        Assertions.assertThatIllegalArgumentException().isThrownBy {
+            arithmeticOperationCheck(arithmetic,Pair(1,2))
+        }
     }
 }
