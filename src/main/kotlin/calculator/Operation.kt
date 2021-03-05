@@ -18,7 +18,6 @@ enum class Operation : BinaryOperator<Int>, IntBinaryOperator {
     };
 
     override fun applyAsInt(firstValue: Int, secondValue: Int): Int = apply(firstValue, secondValue)
-
 }
 
 fun arithmeticOperationCheck(arithmeticOperation: String, values: Pair<Int,Int> ) {
@@ -26,7 +25,8 @@ fun arithmeticOperationCheck(arithmeticOperation: String, values: Pair<Int,Int> 
         "+" -> Operation.PLUS.apply(values.first, values.second)
         "-" -> Operation.MINUS.apply(values.first, values.second)
         "*" -> Operation.MULTIPLY.apply(values.first, values.second)
-        "/" -> Operation.DIVISION.apply(values.first, values.second)
+        "/" -> if (values.toList().contains(0)) throw ArithmeticException()
+                else Operation.DIVISION.apply(values.first, values.second)
         else -> throw IllegalArgumentException()
     }
 }

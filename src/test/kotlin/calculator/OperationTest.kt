@@ -2,7 +2,9 @@ package calculator
 
 import org.assertj.core.api.Assertions
 import org.assertj.core.api.Assertions.assertThat
+import org.assertj.core.api.Assertions.assertThatExceptionOfType
 import org.junit.jupiter.api.DisplayName
+import org.junit.jupiter.api.Test
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.CsvSource
 
@@ -32,10 +34,17 @@ class OperationTest {
         assertThat(Operation.DIVISION.apply(firstValue, secondValue)).isEqualTo(result)
     }
 
+    @Test
+    fun 제로값으로_나눗셈() {
+        assertThatExceptionOfType(ArithmeticException::class.java).isThrownBy {
+            arithmeticOperationCheck("/",Pair(0,2))
+        }
+    }
+
     @ParameterizedTest
     @DisplayName("사칙연산 예외 기호 테스트 코드")
     @CsvSource(value = ["@", "%", "$", "&"])
-    fun arithmeticOperationCheck(arithmetic: String) {
+    fun 사칙연산_예외_기호(arithmetic: String) {
         Assertions.assertThatIllegalArgumentException().isThrownBy {
             arithmeticOperationCheck(arithmetic,Pair(1,2))
         }
