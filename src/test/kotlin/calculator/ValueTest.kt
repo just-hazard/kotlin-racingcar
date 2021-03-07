@@ -6,13 +6,6 @@ import org.junit.jupiter.api.Test
 
 internal class ValueTest {
     @Test
-    internal fun 널체크() {
-        assertThatExceptionOfType(NullPointerException::class.java).isThrownBy {
-            Value(null)
-        }
-    }
-
-    @Test
     internal fun 빈값체크() {
         assertThatExceptionOfType(IllegalArgumentException::class.java).isThrownBy {
             Value("")

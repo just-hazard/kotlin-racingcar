@@ -20,8 +20,8 @@ enum class Operation : BinaryOperator<Int>, IntBinaryOperator {
     override fun applyAsInt(firstValue: Int, secondValue: Int): Int = apply(firstValue, secondValue)
 }
 
-fun arithmeticOperationCheck(arithmeticOperation: String, values: Pair<Int,Int> ) {
-    when (arithmeticOperation) {
+fun arithmeticOperationCheck(arithmeticOperation: String, values: Pair<Int,Int> ): Int {
+    return when (arithmeticOperation) {
         "+" -> Operation.PLUS.apply(values.first, values.second)
         "-" -> Operation.MINUS.apply(values.first, values.second)
         "*" -> Operation.MULTIPLY.apply(values.first, values.second)
