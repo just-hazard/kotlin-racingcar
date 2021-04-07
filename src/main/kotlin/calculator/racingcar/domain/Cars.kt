@@ -1,12 +1,20 @@
 package calculator.racingcar.domain
 
-import java.lang.IllegalArgumentException
 
-class Cars(cars: List<Car>) {
+class Cars(private val number: Int) {
+
+    val cars: List<Car>
+    private val carMovingStrategy = CarMovingStrategy()
 
     init {
-        require(cars.isNotEmpty()) {
-            throw IllegalArgumentException("자동차 등록은 필수입니다.")
-        }
+        cars = registerCar(number)
+    }
+
+    private fun registerCar(number: Int): List<Car> {
+        return List(size = number, init = { Car() })
+    }
+
+    fun moveOfCars() {
+        cars.forEach{ it.moveOfCar(carMovingStrategy)}
     }
 }

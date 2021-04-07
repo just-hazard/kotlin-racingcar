@@ -1,8 +1,17 @@
 package calculator.racingcar.domain
 
-class Car (var distance: Int = 0) {
 
-    fun  addDistance(): Unit {
-        distance += 1
+class Car {
+
+    private var moveDistance: MoveDistance = MoveDistance()
+
+    fun moveOfCar(movingStrategy: MovingStrategy) {
+        if(movingStrategy.movable()) {
+            moveDistance.move()
+        }
+    }
+
+    fun carPosition() : Int {
+        return moveDistance.distance
     }
 }
