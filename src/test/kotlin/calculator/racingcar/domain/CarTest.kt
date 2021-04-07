@@ -14,12 +14,11 @@ class CarTest {
     }
 
     @Test
-    fun 이동거리_증가_테스트() {
-        car.addDistance()
-        assertThat(car.distance).isEqualTo(1)
-        car.addDistance()
-        assertThat(car.distance).isEqualTo(2)
-        car.addDistance()
-        assertThat(car.distance).isEqualTo(3)
+    fun 차량_이동_테스트() {
+        car.moveOfCar { false }
+        assertThat(car.carPosition()).isEqualTo(0)
+
+        car.moveOfCar { true }
+        assertThat(car.carPosition()).isEqualTo(1)
     }
 }

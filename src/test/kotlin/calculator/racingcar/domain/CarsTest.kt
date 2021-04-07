@@ -1,19 +1,15 @@
 package calculator.racingcar.domain
 
-import calculator.arithmeticOperationCheck
-import org.assertj.core.api.Assertions
-import org.assertj.core.api.Assertions.assertThat
-import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
-import java.util.*
+import org.assertj.core.api.Assertions.assertThat
+
 
 class CarsTest {
     private lateinit var cars: Cars
 
     @Test
-    internal fun 자동차_객체가_없을시() {
-        Assertions.assertThatIllegalArgumentException().isThrownBy {
-            cars = Cars(listOf())
-        }.withMessage("자동차 등록은 필수입니다.")
+    fun 자동차_객체_생성_테스트() {
+        cars = Cars(5)
+        assertThat(cars.cars.size).isEqualTo(5)
     }
 }
