@@ -13,7 +13,7 @@ class RacingTest {
 
     @BeforeEach
     fun setUp() {
-        racing = Racing(1,0)
+        racing = Racing("자동차,자동차1,자동차2,차동차3,자동차4",0)
     }
 
     @Test

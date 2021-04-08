@@ -10,7 +10,7 @@ class CarTest {
 
     @BeforeEach
     fun setUp() {
-        car = Car()
+        car = Car(Name("자동차"))
     }
 
     @Test

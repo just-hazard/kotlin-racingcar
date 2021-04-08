@@ -3,9 +3,9 @@ package calculator.racingcar.service
 import calculator.racingcar.domain.Car
 import calculator.racingcar.domain.Cars
 
-class Racing(private val createCarsNumber : Int, private val moveCarCount: Int) {
+class Racing(private val createCarNames : String, private val moveCarCount: Int) {
 
-    private var cars = Cars(createCarsNumber)
+    private var cars = Cars(createCarNames)
 
     init {
         validationMoveOfCar()

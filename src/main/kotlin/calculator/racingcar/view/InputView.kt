@@ -4,9 +4,9 @@ import java.util.*
 
 class InputView(private val sc: Scanner = Scanner(System.`in`)) {
 
-    fun createNumberOfCars(): Int {
-        writePrint("자동차 대수는 몇대 인가요?")
-        return sc.nextInt()
+    fun createNumberOfCars(): String {
+        writePrint("경주할 자동차 이름을 입력하세요(이름은 쉼표(,)를 기준으로 구분)")
+        return sc.nextLine()
     }
 
     fun createNumberOfMoves(): Int {

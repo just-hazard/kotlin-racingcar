@@ -1,8 +1,9 @@
 package calculator.racingcar.domain
 
 
-class Car {
+class Car(carName: Name) {
 
+    private val name = carName
     private var moveDistance: MoveDistance = MoveDistance()
 
     fun moveOfCar(movingStrategy: MovingStrategy) {

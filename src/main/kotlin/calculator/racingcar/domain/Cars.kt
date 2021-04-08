@@ -1,17 +1,18 @@
 package calculator.racingcar.domain
 
 
-class Cars(private val number: Int) {
+class Cars(private val carNames: String) {
 
     val cars: List<Car>
     private val carMovingStrategy = CarMovingStrategy()
 
     init {
-        cars = registerCar(number)
+        cars = registerCar(carNames)
     }
 
-    private fun registerCar(number: Int): List<Car> {
-        return List(size = number, init = { Car() })
+    private fun registerCar(carNames: String): List<Car> {
+        return carNames.split(",").map { Car(Name(it)) }
+//        return List(size = carNames, init = { Car() })
     }
 
     fun moveOfCars() {
