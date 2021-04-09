@@ -3,6 +3,10 @@ package calculator.racingcar.domain
 
 class Cars(private val carNames: String) {
 
+    companion object {
+        private const val COMMA = ","
+    }
+
     val cars: List<Car>
     private val carMovingStrategy = CarMovingStrategy()
 
@@ -11,8 +15,7 @@ class Cars(private val carNames: String) {
     }
 
     private fun registerCar(carNames: String): List<Car> {
-        return carNames.split(",").map { Car(Name(it)) }
-//        return List(size = carNames, init = { Car() })
+        return carNames.split(COMMA).map { Car(Name(it)) }
     }
 
     fun moveOfCars() {

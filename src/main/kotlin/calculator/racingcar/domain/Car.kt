@@ -15,4 +15,8 @@ class Car(carName: Name) {
     fun carPosition() : Int {
         return moveDistance.distance
     }
+
+    fun getCarName(): String {
+        return name.name
+    }
 }
