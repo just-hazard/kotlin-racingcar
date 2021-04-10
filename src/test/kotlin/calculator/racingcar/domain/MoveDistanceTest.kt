@@ -10,4 +10,16 @@ class MoveDistanceTest {
         moveDistance.move()
         assertThat(moveDistance.distance).isEqualTo(1)
     }
+
+    @Test
+    internal fun 최대_이동거리_구하기() {
+        val moveDistance = MoveDistance(2)
+        assertThat(moveDistance.isMaxPosition(4)).isEqualTo(4)
+    }
+
+    @Test
+    internal fun 같은_이동거리_체크() {
+        val moveDistance = MoveDistance(2)
+        assertThat(moveDistance.isSamePosition(2)).isTrue
+    }
 }
