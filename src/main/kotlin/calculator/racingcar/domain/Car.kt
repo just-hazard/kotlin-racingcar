@@ -19,4 +19,12 @@ class Car(carName: Name) {
     fun getCarName(): String {
         return name.name
     }
+
+    fun maxPosition(maxPosition: Int): Int {
+        return moveDistance.isMaxPosition(maxPosition)
+    }
+
+    fun isWinner(maxPosition: Int): Boolean {
+        return moveDistance.isSamePosition(maxPosition)
+    }
 }

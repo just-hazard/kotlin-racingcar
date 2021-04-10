@@ -9,4 +9,5 @@ fun main() {
     val resultView = ResultView()
     val racing = Racing(inputView.createNumberOfCars(),inputView.createNumberOfMoves())
     resultView.carPositionPrints(racing.getCarPositionList())
+    resultView.winnersNamePrints(racing.getWinners())
 }

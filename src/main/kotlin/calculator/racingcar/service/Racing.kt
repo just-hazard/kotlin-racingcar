@@ -23,4 +23,8 @@ class Racing(private val createCarNames : String, private val moveCarCount: Int)
     fun getCarPositionList(): List<Car> {
         return cars.cars
     }
+
+    fun getWinners(): String {
+        return cars.winners()
+    }
 }
