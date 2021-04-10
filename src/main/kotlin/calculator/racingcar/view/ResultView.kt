@@ -9,7 +9,12 @@ class ResultView {
         }
     }
 
+    private fun carNamePrint(car: Car) {
+        print("${car.getCarName()} : ")
+    }
+
     private fun carPositionPrint(car: Car) {
+        carNamePrint(car)
         (0..car.carPosition()).forEach { _ ->
             print("-")
         }
